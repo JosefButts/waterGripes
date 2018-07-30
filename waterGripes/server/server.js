@@ -3,7 +3,7 @@ const path = require('path');
 const { urlencoded, json } = require('body-parser')
 const db = require('../database-mysql/helpers.js');
 const axios = require('axios');
-// const sendEmail = require('./emailHelper.js');
+const sendEmail = require('./emailHelper.js');
 const app = express();
 
 const {
