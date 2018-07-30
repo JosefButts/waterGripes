@@ -52,5 +52,4 @@ export class GripeListEntryComponent implements OnInit {
     this.goBack();
   }
 
-  
 }
