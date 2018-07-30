@@ -3,8 +3,8 @@
   <div>
     {{gripe.gripe | uppercase }}
   </div>
-  <div>
-    {{gripe.comment}}
+  <div *ngIf="gripe.comment !== 'undefined'">
+    {{gripe.comment}} 
   </div>
   <div>
     On the {{gripe.block_number}} block of {{gripe.street}}
@@ -15,13 +15,7 @@
   
   Vote: <span><button (click)="vote(-1)">Resolved</button></span><button (click)="vote(1)">UnResolved</button>
   <div>
-    <div>
-      <!-- this creates a google map on the page with the given lat/lng from -->
-      <!-- the component as the initial center of the map: -->
-      <agm-map [latitude]="lat" [longitude]="lng">
-        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-      </agm-map>
-    </div>
+   {{gripe.latitude}} {{gripe.longitude}}
   </div>
 </div>
 <button (click)="goBack()">go back</button>
