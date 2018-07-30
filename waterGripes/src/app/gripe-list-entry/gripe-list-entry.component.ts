@@ -5,16 +5,24 @@ import { Location } from '@angular/common';
 import { Gripe } from '../gripe';
 import { GripeService } from '../gripe.service';
 import { log } from 'util';
+import { GOOGLE_API_KEY } from '../../../config.js';
+
+
+
 
 
 @Component({
   selector: 'app-gripe-list-entry',
   templateUrl: './gripe-list-entry.component.html',
-  styleUrls: ['./gripe-list-entry.component.css']
+  styleUrls: ['./gripe-list-entry.component.css'],
 })
+
 export class GripeListEntryComponent implements OnInit {
   @Input() gripe: Gripe;
-  
+  title: 'Gripe Location';
+  lat: 29.9;
+  lng: -90;
+
   constructor(
     private route: ActivatedRoute,
     private gripeService: GripeService,

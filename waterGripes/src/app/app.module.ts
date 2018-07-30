@@ -20,9 +20,14 @@ import {
   AuthServiceConfig,
   GoogleLoginProvider,
 } from "angular-6-social-login";
+import { AgmCoreModule } from '@agm/core';
+import { GOOGLE_API_KEY } from '../../config.js';
+
+// const GOOGLE_API_KEY = 'AIzaSyAQD0EtqkZhGsuQD49UcSIjECQCM-3Ue_M';
 
 // Configs
 export function getAuthServiceConfigs() {
+ 
   const PROVIDER_ID = 'watergripes';
   const config = new AuthServiceConfig(
       [
@@ -49,7 +54,10 @@ export function getAuthServiceConfigs() {
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    SocialLoginModule
+    SocialLoginModule,
+    AgmCoreModule.forRoot({
+      apiKey: GOOGLE_API_KEY
+    })
 
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.

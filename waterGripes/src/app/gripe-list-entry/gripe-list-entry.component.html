@@ -1,6 +1,4 @@
 <div *ngIf="gripe">
-
-
   <h3>Gripe Status: {{gripe.status}}</h3>
   <div>
     {{gripe.gripe | uppercase }}
@@ -14,10 +12,16 @@
   <div>
     New Orleans, LA {{gripe.zipcode}}
   </div>
-  <div>
-
-  </div>
-  Vote: <span><button (click)="vote(-1)">Resolved</button></span><button (click)="vote(1)">UnResolved</button>
   
+  Vote: <span><button (click)="vote(-1)">Resolved</button></span><button (click)="vote(1)">UnResolved</button>
+  <div>
+    <div>
+      <!-- this creates a google map on the page with the given lat/lng from -->
+      <!-- the component as the initial center of the map: -->
+      <agm-map [latitude]="lat" [longitude]="lng">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
+    </div>
+  </div>
 </div>
 <button (click)="goBack()">go back</button>
